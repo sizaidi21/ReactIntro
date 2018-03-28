@@ -3,10 +3,16 @@ import ShowCard from './ShowCard';
 import preload from '../data.json';
 
 class Search extends Component {
-	state = {
-		searchTerm: ''
-	};
-	handleSearchTermChange = event => {
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			searchTerm: 'this is some sort of debug statement'
+		};
+
+		this.handleSearchTermChange = this.handleSearchTermChange.bind(this);
+	}
+	handleSearchTermChange(event) {
 		this.setState({ searchTerm: event.target.value });
 	}
 	render() {
